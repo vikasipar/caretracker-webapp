@@ -1,0 +1,545 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  background: #f3f3f5;
+}
+
+a {
+  text-decoration: none;
+  color: #0251b3;
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  color: black;
+  border-bottom: 2px solid #e9f2ff;
+}
+
+.logo {
+  color: #043d82;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  padding-top: 9px;
+  justify-content: space-around;
+  width: 50%;
+  font-size: 1.1rem;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+/*first section*/
+
+.first {
+  /* width: 100%; */
+  display: flex;
+  margin: 5px;
+}
+.first-left {
+  width: 56%;
+  align-items: center;
+  text-align: center;
+}
+#img {
+  width: 100%;
+}
+.first-right {
+  width: 44%;
+}
+.main-header {
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: #0972f3;
+}
+.sub-header {
+  height: 50%;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #445571;
+}
+
+.second {
+  display: flex;
+}
+.second-left {
+  width: 50%;
+  padding: 20px;
+  padding-top: 1.6rem;
+}
+.second-left h1 {
+  color: #0972f3;
+  font-size: 2.6rem;
+}
+.second-left .content {
+  width: 90%;
+  margin: auto;
+}
+#slogan {
+  color: rgb(0, 154, 196);
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+.second-left h2 {
+  color: #445571;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+.second-right {
+  width: 50%;
+}
+#img2 {
+  width: 80%;
+  margin: auto;
+}
+.mobile-content {
+  display: none;
+}
+
+/*third section*/
+.third {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.third-left {
+  width: 50%;
+}
+.third-left h1 {
+  color: #0972f3;
+  font-size: 2.6rem;
+}
+#img3 {
+  width: 100%;
+  margin-top: 10px;
+}
+.third-right {
+  width: 50%;
+}
+.third-right h2 {
+  color: #0359c3;
+}
+.third-right h3 {
+  color: #445573;
+}
+
+/*forth section*/
+.forth {
+  padding: 20px;
+  margin-bottom: 70px;
+}
+.forth h1 {
+  color: #0972f3;
+  font-size: 2.6rem;
+}
+.forth .steps {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.forth .step {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  padding: 15px 25px;
+  align-items: center;
+  box-shadow: 0.5px 1px 1px 1.1px #969697;
+}
+.forth img {
+  height: 90px;
+  padding-right: 19px;
+}
+.forth h2 {
+  color: #0359c3;
+}
+.forth h3 {
+  color: #445573;
+}
+.forth .btn button {
+  display: none;
+}
+/*fifth section*/
+.fifth {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+.fifth-left {
+  width: 50%;
+}
+.fifth h1 {
+  color: #0972f3;
+  font-size: 2.6rem;
+}
+.fifth-left .content {
+  margin-top: 30px;
+  width: 80%;
+  margin: auto;
+}
+.fifth h2 {
+  color: #0359c3;
+}
+.fifth h3 {
+  color: #445573;
+}
+.fifth-right {
+  width: 50%;
+}
+.fifth-right .form {
+  width: 90%;
+  margin: auto;
+  margin-top: 90px;
+}
+.fifth-right .box1 {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+.fifth-right .box2 {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px;
+}
+.fifth img {
+  height: 50px;
+  padding-right: 19px;
+}
+.fifth-right input {
+  width: 50%;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #848484;
+  border-radius: 10px;
+}
+.fifth-right textarea {
+  width: 50%;
+  height: 100px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+.fifth-right .btn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.fifth-right .btn button {
+  padding: 10px 15px;
+  margin-top: 35px;
+  margin-left: 24%;
+  color: #ffff;
+  background: #0972f3;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.fifth-right .btn button:hover {
+  color: #0972f3;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #0972f3;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00469b;
+  }
+  .sub-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2888ff;
+  }
+}
+/*
+@media screen and (max-width: 768px) {
+  .main-header {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #013b84;
+  }
+  .sub-header {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2888ff;
+  }
+}*/
+
+@media screen and (max-width: 580px) {
+  .body {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+  }
+  /*navbar*/
+  .nav {
+    margin: 0%;
+    padding: 25px;
+  }
+  .logo {
+    padding: 9px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 9%;
+  }
+  /*first section*/
+  .first {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .first-left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  #img {
+    width: 90%;
+    margin: 0% 5%;
+  }
+  .first-right {
+    width: 90%;
+    margin: 5% 0%;
+  }
+  .main-header {
+    width: 99%;
+    text-align: center;
+    align-items: center;
+    font-size: 1.8rem;
+  }
+  .sub-header {
+    display: none;
+  }
+  /*second section*/
+  .second {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+    margin-bottom: 30px;
+  }
+  .second-left {
+    width: 100%;
+    margin: 0%;
+  }
+  .second-left h1 {
+    width: 90%;
+    padding: 0%;
+    color: #0972f3;
+    font-size: 1.5rem;
+  }
+  .second-left #slogan {
+    display: none;
+  }
+  .second-left h2 {
+    display: none;
+  }
+  .second-right {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+  }
+  #img2 {
+    width: 80%;
+    margin: 0% 10%;
+    margin-top: 8px;
+  }
+  .mobile-content {
+    display: block;
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+    font-size: 0.7rem;
+    color: #445571;
+  }
+  /*third section*/
+  .third {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+  }
+  .third-left {
+    width: 100%;
+    margin: 0%;
+  }
+  .third-left h1 {
+    width: 100%;
+    padding: 0%;
+    margin: 0% 5%;
+    font-size: 1.5rem;
+  }
+  .third-right {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+  }
+  .third-right .third-content {
+    width: 92%;
+    margin: auto;
+  }
+  .third-right h2 {
+    font-size: 1.2rem;
+  }
+  .third-right h3 {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+  #img2 {
+    width: 90%;
+    height: 300px;
+    margin: 0% 5%;
+    margin-top: -8%;
+  }
+  /*forth section*/
+  .forth {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .forth h1 {
+    color: #0972f3;
+    font-size: 1.5rem;
+  }
+  .forth .steps {
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .forth .step {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0.5px 1px 1px 1.1px #969697;
+  }
+  .forth img {
+    height: 50px;
+    padding-right: 10px;
+  }
+  .forth h2 {
+    font-size: 1.2rem;
+  }
+  .forth h3 {
+    font-size: 0.9rem;
+  }
+  .forth .btn button {
+    display: block;
+    padding: 7px 10px;
+    margin-top: 35px;
+    margin-left: 30%;
+    color: #ffff;
+    background: #0972f3;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .forth .btn button:hover {
+    color: #0972f3;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid #0972f3;
+  }
+  /*fifth section*/
+  .fifth {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+  }
+  .fifth-left {
+    width: 100%;
+  }
+  .fifth-right {
+    width: 100%;
+  }
+  .fifth-left .content {
+    margin-top: -30px;
+    margin-left: 10px;
+  }
+  .fifth #slogan {
+    display: none;
+  }
+  .fifth h1 {
+    color: #0972f3;
+    font-size: 1.5rem;
+  }
+  .fifth img {
+    height: 50px;
+    padding-right: 10px;
+  }
+  .fifth h2 {
+    font-size: 1.2rem;
+  }
+  .fifth h3 {
+    font-size: 0.9rem;
+  }
+  .fifth-right .form {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .fifth-right .box1 {
+    margin: 10px;
+  }
+  .fifth-right .box2 {
+    margin: 10px;
+  }
+  .fifth img {
+    height: 32px;
+    padding-right: 13px;
+  }
+  .fifth-right input {
+    width: 60%;
+    height: 25px;
+    padding: 3px 7px;
+  }
+  .fifth-right textarea {
+    width: 60%;
+    height: 60px;
+    padding: 3px 7px;
+  }
+  .fifth-right .btn button {
+    padding: 7px 10px;
+    margin-top: 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+}
