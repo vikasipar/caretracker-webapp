@@ -1,0 +1,132 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  background: #f0f0f0;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid #f1f7ff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+nav:hover {
+  box-shadow: 0 3px 5px 0 rgba(14, 12, 16, 0.2);
+}
+a {
+  text-decoration: none;
+  color: #0251b3;
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+li a:hover {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(227, 10, 10);
+}
+
+.logo {
+  padding: 10px 20px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.logo a {
+  color: #0065d7;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  padding-top: 9px;
+  justify-content: space-around;
+  width: 50%;
+  font-size: 1.3rem;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
+}
+.content {
+  width: 100%;
+  margin: 0;
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.box {
+  width: 80%;
+  height: 100vh;
+  margin: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile {
+  width: 35%;
+  height: 75vh;
+}
+.card {
+  border: 2px solid #f1f7ff;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 12px 19px 0 rgba(14, 12, 16, 0.2);
+}
+.qrcode {
+  border: 2px solid #f1f7ff;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.qrcode:hover {
+  box-shadow: 0 12px 19px 0 rgba(14, 12, 16, 0.2);
+}
+.container {
+  padding: 2px 16px;
+}
+
+/* media query */
+
+@media screen and (max-width: 580px) {
+  .body {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+  }
+  /*navbar*/
+  .nav {
+    margin: 0%;
+    padding: 25px;
+  }
+  .logo {
+    padding: 9px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 9%;
+  }
+}
