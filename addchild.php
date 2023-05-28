@@ -45,6 +45,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="resource/boy.png">
     <link rel="stylesheet" href="design.css">
     <title>| CareTracker > Child Registration Form |</title>
@@ -54,12 +55,13 @@ if(isset($_POST['submit'])){
             margin: 0%;
             padding: 0%;
         }
-
+        .nav-links{
+            align-items: center;
+        }
         .form {
             width: 100%;
             display: flex;
         }
-
         .form-left {
             width: 35%;
             margin: auto;
@@ -68,7 +70,6 @@ if(isset($_POST['submit'])){
             justify-content: center;
             border-right: 2px solid #b1b1b1;
         }
-
         .form-left img {
             width: 75%;
         }
@@ -96,6 +97,12 @@ if(isset($_POST['submit'])){
         button {
             margin: 5% 48%;
         }
+        #dashbrd{
+            margin: 0px;
+        }
+        #mob-dashbrd{
+            display: none;
+        }
 
         @media screen and (max-width:580px) {
             .form {
@@ -122,9 +129,17 @@ if(isset($_POST['submit'])){
                 margin: 2% auto;
                 padding: 5px;
             }
-
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
             button {
-                margin: 14% 30%;
+                margin: auto;
+            }
+            #mob-dashbrd{
+                display: block;
+                margin: 20px auto;
             }
         }
     </style>
@@ -140,8 +155,9 @@ if(isset($_POST['submit'])){
             <li><a href="index.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#stat">Statistics</a></li>
-            <li><a href="parent.html">Register</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li> <a href="dashboard.php"><button type="submit" id="dashbrd" class="btn btn-primary">Back To Dashboard</button></a></li>
+            
         </ul>
         <div class="hamburger">
             <img src="resource/menu.png" alt="Menu" height="20px">
@@ -196,17 +212,53 @@ if(isset($_POST['submit'])){
                         <input type="city" class="form-control" id="city" placeholder="city" name="city" required>
                     </div>
                 </div>
+        
                 <div class="form-group row">
-                    <label for="state" class="col-sm-2 col-form-label">State</label>
-                    <div class="col-sm-10">
-                        <input type="state" class="form-control" id="state" placeholder="state" name="state" required>
-                    </div>
+                <label for="state" class="col-sm-2 col-form-label">State</label>
+                <select class="form-select" name="state" aria-label="Default select example">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                </select>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row bottom">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary" name="submit">Add Child</button>
                     </div>
+                    <a href="dashboard.php"><button type="submit" id="mob-dashbrd" class="btn btn-primary">Back To Dashboard</button></a>
                 </div>
             </form>
         </div>

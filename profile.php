@@ -84,6 +84,13 @@ if (!$result) {
            <div class="qrcode">
            <?php 
            $link = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+        //    to store url in database
+            $cid = $_GET['profileid'];
+            include 'dbconnect.php';
+            $sql = "UPDATE `children` SET `profile`='$link' WHERE `Child Id`= $cid";
+            $result = mysqli_query($conn, $sql);
+            
             include 'qrcode.php'; 
             ?>
             </div>

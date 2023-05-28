@@ -13,8 +13,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $existQuery = "SELECT * FROM `users` WHERE Email = '$email'";
     $result =  mysqli_query($conn, $existQuery);
     $numofexistsrows = mysqli_num_rows($result);
-    if($numofexistsrows > 0){
+    if($numofexistsrows > 0) {
         $showError = "<strong>Error!</strong> Email Already Exists";
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $showError = "<strong>Error!</strong> The email address is not valid";
+        }
+        
     }
     else{
         if(($password == $cpassword)){
@@ -71,10 +76,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             padding: 20px;
         }
 
-        .button {
-            margin-top: 5%;
+        .btns{
+            width: 100%;
+            margin: auto;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            flex-direction : column;
+        }
+
+        .button {
+            margin-bottom: -25%;
         }
 
         .form-check {
@@ -83,12 +94,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         .newbtn {
-            margin-top: -90px;
-            margin-left: 30%;
+            text-decoration: none;
+            margin-top : -12px;
+        }
+        .newbtn:hover{
             text-decoration: none;
         }
 
         button a {
+            text-decoration: none;
+        }
+        button a:hover {
             text-decoration: none;
         }
 
@@ -125,12 +141,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 width: 100%;
             }
 
-            .newbtn {
+            /* .newbtn {
                 margin-left: 20%;
+            } */
+
+            .btns{
+                display: flex;
             }
 
             .button {
-                margin-top: 60px;
+                margin-top: 0px;
             }
 
             .form-left {
@@ -230,6 +250,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div>
                     </div>
                 </div>
+                <br><br>
+                <div class="btns">
                 <div class="form-group row">
                     <div class="col-sm-10 button">
                         <button type="submit" class="btn btn-primary">Sign Up</button>
@@ -242,6 +264,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 style="color:#ffff; text-decoration:none;">Already Have An
                                 Account</a></button>
                     </div>
+                </div>
                 </div>
 
             </form>

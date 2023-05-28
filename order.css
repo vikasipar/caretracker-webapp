@@ -51,19 +51,15 @@ a:hover {
 .hamburger {
   display: none;
 }
-h5 {
-  color: #67676e;
-  margin-top: 20px;
-  margin-left: 30px;
-  margin-bottom: -60px;
-}
 .content {
-  width: 60%;
+  width: 67%;
   margin: auto;
   height: 80vh;
   padding: 1px 10px;
   display: flex;
-  place-content: center;
+  background-image: url(resource/delivery.png);
+  background-repeat: no-repeat;
+  background-size: 740px 670px;
   flex-direction: column;
   border: 2px solid #f1f7ff;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2);
@@ -71,32 +67,17 @@ h5 {
 }
 .tickimg {
   display: flex;
+  margin-left: 550px;
   color: rgb(12, 192, 12);
   margin-top: 0px;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
 }
 .tickimg button {
   display: none;
 }
 #tick {
-  width: 18%;
-  padding-top: 10px;
-}
-.delivery {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  margin: 30px 0px 0px 0px;
-}
-.delivery #img1 {
-  width: 45%;
-}
-.delivery .history {
-  width: 50%;
-  padding-bottom: 20px;
+  width: 48%;
+  margin-left: 40px;
 }
 
 @media (max-width: 800px) {
@@ -119,31 +100,33 @@ h5 {
     cursor: pointer;
     padding-right: 9%;
   }
-  .tickimg {
-    width: 100%;
-    margin: 0%;
-    padding: auto;
-  }
-  .tickimg button {
+  button {
     display: block;
     margin-top: 60px;
   }
-  #tick {
-    width: 80%;
-  }
   .content {
-    width: 80%;
-    height: 60vh;
-    padding: auto;
-    margin: 20vh auto;
+    display: flex;
+    width: 90%;
+    height: 70vh;
+    align-items: center;
+    text-align: center;
+    background-image: none;
+    flex-direction: column;
   }
-  .delivery {
-    display: none;
+  .tickimg {
+    display: flex;
+    margin: auto;
+    margin-left: 5px;
+    color: rgb(12, 192, 12);
+    margin-top: 0px;
+    flex-direction: column;
   }
-  h5 {
-    display: none;
+  .tickimg button {
+    display: block;
+    margin: auto;
+    margin-top: 30%;
   }
-  hr {
-    display: none;
+  #tick {
+    width: 75%;
   }
 }

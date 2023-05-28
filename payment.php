@@ -1,3 +1,8 @@
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+header('Location: order.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +36,8 @@
   <div class="row">
     <div class="right">
       <div class="container1">
-        <form>
+
+        <form action = "payment.php" method="post">
 
           <div class="row">
                 <div class="col-50 col-left">
@@ -85,11 +91,12 @@
                   <input type="text" id="cvv" name="cvv" placeholder="123">
                 </div>
               </div>
-              <?php
-                $paymentid = $_GET['paymentid'];
-                echo 
-              '<button type="submit" class="btn btn-primary"><a href="order.php?paymentid='.$paymentid.'" style="color:#fff;">Place Order</a></button>';
-              ?>
+              <?php 
+              $id = $_GET['paymentid'];
+              echo '<button type="submit" class="btn btn-primary">
+              <a href="order.php? paymentid='.$id.'" class="text-light" style="text-decoration:none;">Place Order</a>
+            </button>';
+            ?>
               </div>
           </div>
 

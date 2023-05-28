@@ -149,9 +149,6 @@ span.price {
   .row {
     flex-direction: column-reverse;
   }
-  .right {
-    margin-top: 20px;
-  }
   /*navbar*/
   .nav {
     margin: 0%;

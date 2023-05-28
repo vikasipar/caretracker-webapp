@@ -1,28 +1,25 @@
 <?php
-$paymentid = $_GET['paymentid'];
-include 'dbconnect.php';
+$childid = $_GET['paymentid'];
 
-$sql = "SELECT `Name` FROM `children` WHERE `Child Id`='$paymentid'";
-$result = mysqli_query($conn, $sql);
-if($result){
-    $row = mysqli_fetch_assoc($result);
-    $cname = $row['Name'];
-}
+include 'dbconnect.php';
 
 $qty = 1;
 $amt = 999;
 
-$countid = "SELECT COUNT(*) FROM `orders` WHERE `Child Id`='$paymentid'";
-$check = mysqli_query($conn, $countid);
-if(mysqli_num_rows($check) > 0){ // check if the query returned any rows
-    $qty = $qty + 1;
-    $amt = $amt * 2;
-    $sql = "UPDATE `orders` SET `Quantity`='$qty', `Amount`='$amt' WHERE `Child Id`='$paymentid'";
-}
-else{
-    $sql = "INSERT INTO `orders`(`Name`,`Child Id`,`Quantity`,`Amount`) VALUES ('$cname','$paymentid','$qty','$amt')";
-}
-$result = mysqli_query($conn, $sql);
+  $sql = "Select * from `orders` where `Child Id` ='$childid'";
+  $result = mysqli_query($conn, $sql);
+  $num = mysqli_num_rows($result);
+
+  if($num == 1){
+    $row = mysqli_fetch_assoc($result);
+    $amt = $row['Amount'];
+    $qty = $row['Quantity'];
+    $sql = "UPDATE `orders` SET `Quantity` = $qty+1,`Amount` = $amt+999 WHERE `Child Id` = $childid";
+  }
+  else{
+    $sql = "INSERT INTO `orders`(`Child Id`,`Quantity`,`Amount`) VALUES ($childid,$qty,$amt)";
+  }
+  $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -58,50 +55,10 @@ $result = mysqli_query($conn, $sql);
     <div class="content">
         <div class="tickimg">
             <img id="tick" src="resource/tick.gif" title="success" alt="tick">
-            <h4>Order Successfully Placed </h4>
-            <button type="button" class="btn btn-primary">Back To Dashboard</button>
-        </div>
-        <br>
-        <hr color="#f3f3f5" width="50%">
-        <h5>Purchase History:</h5>
-        <div class="delivery">
-            <img id="img1" src="resource/delivery.png" title="delivery" alt="delivery-boy">
-            <div class="history">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Purchased For</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        include 'dbconnect.php';
-                        $sql = "SELECT * FROM `orders` WHERE `Child Id`=$paymentid";
-                        $result = mysqli_query($conn, $sql);
-
-                        if($result){
-                            $number = 0;
-                            while($row=mysqli_fetch_assoc($result)){
-                                $cname = $row['Name'];
-                                $qty = $row['Quantity'];
-                                $amt = $row['Amount'];
-                                $number = $number+1;
-
-                                echo '<tr>
-                                    <th scope="row">'.$paymentid.'</th>
-                                    <td>'.$cname.'</td>
-                                    <td>'.$qty.'</td>
-                                    <td>₹ '.$amt.'</td>
-                                </tr>';
-                            }
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
+            <h3>Order Successfully Placed </h3>
+            <a href="dashboard.php">
+            <button type="submit" class="btn btn-primary">Back To Dashboard</button></a>
+            <!-- <img id="dboy" src="resource/delivery.png" title="delivery" alt="delivery-boy"> -->
         </div>
     </div>
 

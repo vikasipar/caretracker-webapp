@@ -1,6 +1,17 @@
 <?php
 $showAlert = false;
 $showError = false;
+$newAlert = false;
+
+session_start();
+
+// check if the session variable exists
+if (isset($_SESSION['success_msg'])) {
+    // unset the session variable
+    $newAlert =  true;
+}
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     include 'dbconnect.php';
 
@@ -104,13 +115,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         form {
-            width: 80%;
+            width: 75%;
             margin: 10% auto;
             padding: 20px;
         }
-
-        button {
-            margin: 14% 42%;
+        .center-footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #fpass{
+            margin-left: 65%;
+        }
+        .new-acc{
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         @media screen and (max-width: 580px) {
@@ -150,9 +171,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             #img2 {
                 display: none;
             }
-
-            button {
-                margin: 14% 34%;
+            #fpass{
+            margin-left: 5%;
+            }
+            .center-footer{
+                display: flex;
+                text-align: left;
+                left: 1;
+            }
+            .new-acc{
+                width: 60vw;
+                display: flex;
+                text-align: center;
             }
         }
     </style>
@@ -166,10 +196,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#stat">Statistics</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#stat">Statistics</a></li>
             <li><a href="signup.php">Register</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
             <img src="resource/menu.png" alt="Menu" height="20px">
@@ -177,6 +207,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </nav>
 
     <?php
+
+    if($newAlert){
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">'."Your password has been reset successfully".'</div>';
+    }
 
     if($showAlert){
         
@@ -216,17 +250,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row my-3" id="element">
+                    <ele id="fpass">
+                    <a href="resetPassword.php">forgot password</a>
+                    </ele>
+                </div>
+
+                <div class="center-footer">
+                <div class="form-group row my-3">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
                 </div>
+                </div>
+                
 
-                <div class="form-group row">
+                <div class="form-group row new-acc mx-5 px-5">
                     <div class="col-sm-10">
-                        <p style="margin-left: 25%; margin-top: -30px;">Create New Account <a href="signup.php">click here</a></p>
+                        <p >Create New Account <a href="signup.php">click here</a></p>
                     </div>
                 </div>
+                
+                
             </form>
 
         </div>

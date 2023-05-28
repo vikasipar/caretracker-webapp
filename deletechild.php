@@ -1,7 +1,6 @@
 <?php
 include 'dbconnect.php';
 
-//if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
     $imgpath = $_GET['imgpath'];
 
@@ -19,5 +18,5 @@ include 'dbconnect.php';
     else{
         die("Error : ". mysqli_connect_error());
     }
-//}
+
 ?>
